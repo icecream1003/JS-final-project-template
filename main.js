@@ -5,8 +5,8 @@ enemyImg.src = "images/slime.gif";
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var slime = {
-  x:60,
-  y:60,
+  x:0,
+  y:0,
 };
 function draw(){
   ctx.drawImage(bgImg,0,0);
