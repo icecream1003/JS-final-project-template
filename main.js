@@ -12,4 +12,4 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(enemyImg,slime.x,slime.y);
 }
-setTimeout(draw,1000);
+setInterval(draw,16);
