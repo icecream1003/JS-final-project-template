@@ -4,12 +4,14 @@ var enemyImg = document.createElement("img");
 enemyImg.src = "images/slime.gif";
 var towerbtnImg = document.createElement("img");
 towerbtnImg.src = "images/tower-btn.png";
+var towerImg = document.createElement("Img");
+towerImg.src = "images/tower.png";
+var canvas = document.getElementById("game-canvas");
+var ctx = canvas.getContext("2d");
 var cursor = {
   x:0,
   y:0,
 };
-var canvas = document.getElementById("game-canvas");
-var ctx = canvas.getContext("2d");
 var slime = {
   x:0,
   y:0,
