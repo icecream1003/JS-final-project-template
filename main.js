@@ -18,10 +18,13 @@ var slime = {
 };
 $("#game-canvas").on("mousemove",function(event){
   console.log("x:" + event.offsetX+",y:"+event.offsetY);
+  cursor.x = event.offsetX;
+  cursor.y = event.offsetY
 });
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(enemyImg,slime.x,slime.y);
   ctx.drawImage(towerbtnImg,590,430,50,50);
+  ctx.drawImage(towerImg,cursor.x,cursor.y);
 }
 setInterval(draw,16);
