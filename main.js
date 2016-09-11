@@ -28,9 +28,9 @@ $("#game-canvas").on("click",function(){
   if(cursor.x >= 590 && cursor.y >= 430){
     console.log("click");
     if(isBuilding == false){
-      var isBuilding = true;
+      isBuilding = true;
     }else{
-      var isBuilding = false;
+      isBuilding = false;
     }
   }
 })
