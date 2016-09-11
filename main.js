@@ -13,6 +13,6 @@ var slime = {
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(enemyImg,slime.x,slime.y);
-  ctx.drawImage(towerImg,608,448);
+  ctx.drawImage(towerImg,608,448,32,32);
 }
 setInterval(draw,16);
