@@ -26,7 +26,7 @@ var slime = {
 var isBuilding = false;
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 590 && cursor.y >= 430){
-    if(var isBuilding == false){
+    if(isBuilding == false){
       var isBuilding = true;
     }else{
       var isBuilding = false;
