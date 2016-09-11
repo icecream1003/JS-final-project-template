@@ -37,13 +37,14 @@ $("#game-canvas").on("click",function(){
     }else{
       isBuilding = false;
     }
+  }else{
+    tower.x = cursor.x;
+    tower.y = cursor.y;
   }
 })
 $("#game-canvas").on("mousemove",function(event){
   cursor.x = event.offsetX;
   cursor.y = event.offsetY;
-  tower.x = event.offsetX;
-  tower.y = event.offsetY;
 });
 
 function draw(){
