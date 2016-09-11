@@ -19,7 +19,7 @@ var slime = {
 $("#game-canvas").on("mousemove",function(event){
   console.log("x:" + event.offsetX+",y:"+event.offsetY);
   cursor.x = event.offsetX;
-  cursor.y = event.offsetY
+  cursor.y = event.offsetY;
 });
 function draw(){
   ctx.drawImage(bgImg,0,0);
