@@ -28,7 +28,9 @@ var slime = {
   x:0,
   y:0,
 };
+
 var isBuilding = false;
+
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 590 && cursor.y >= 430){
     console.log("click");
@@ -42,9 +44,10 @@ $("#game-canvas").on("click",function(){
     tower.y = cursor.y;
   }
 })
+
 $("#game-canvas").on("mousemove",function(event){
-  cursor.x = event.offsetX;
-  cursor.y = event.offsetY;
+  cursor.x = event.offsetX - (event.offsetX % 32);
+  cursor.y = event.offsetY - (event.offsetY % 32);
 });
 
 function draw(){
