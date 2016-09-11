@@ -14,8 +14,8 @@ var slime = {
   x:0,
   y:0,
 };
-$("#game-canvas").mousemove(function(event){
-  console.log("x:" + event.offsetX+",y:"+eventoffsetY);
+$("#game-canvas").on("mousemove",function(event){
+  console.log("x:" + event.offsetX+",y:"+event.offsetY);
 });
 function draw(){
   ctx.drawImage(bgImg,0,0);
