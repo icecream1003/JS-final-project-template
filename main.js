@@ -53,7 +53,7 @@ $("#game-canvas").on("mousemove",function(event){
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(enemyImg,slime.x,slime.y);
-  ctx.drawImage(towerbtnImg,590,430,50,50);
+  ctx.drawImage(towerbtnImg,576,416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y)
   if(isBuilding == true){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
