@@ -14,6 +14,7 @@ var canvas = document.getElementById("game-canvas");
 
 var ctx = canvas.getContext("2d");
 
+var FPS = 60;
 var tower = {
   x:0,
   y:0,
@@ -62,4 +63,4 @@ function draw(){
   }
 }
 
-setInterval(draw,16);
+setInterval(draw,1000/FPS);
