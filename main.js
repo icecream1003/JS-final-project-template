@@ -30,6 +30,10 @@ var slime = {
   y:448,
   speedX:0,
   speedY:-64,
+  move: function(){
+  this.y:448+(this.speedY/FPS);
+  }
+}
 };
 
 var isBuilding = false;
