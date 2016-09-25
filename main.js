@@ -27,6 +27,8 @@ var cursor = {
 var slime = {
   x:96,
   y:448,
+  speedX:0,
+  speedY:-64,
 };
 
 var isBuilding = false;
