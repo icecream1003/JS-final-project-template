@@ -61,7 +61,7 @@ function draw(){
   ctx.drawImage(enemyImg,slime.x,slime.y);
   ctx.drawImage(towerbtnImg,576,416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
-  slime.move;
+  slime.move();
   if(isBuilding == true){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
