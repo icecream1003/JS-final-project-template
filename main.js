@@ -35,6 +35,14 @@ var slime = {
   }
 };
 
+var enemyPath=[
+  {x:96,y:64},
+  {x:384,y:64},
+  {x:384,y:192},
+  {x:224,y:192},
+  {x:224,y:320},
+  {x:544,y:320}
+]
 var isBuilding = false;
 
 $("#game-canvas").on("click",function(){
