@@ -30,6 +30,7 @@ var slime = {
   y:448,
   speedX:0,
   speedY:-64,
+  pathDes:0,
   move: function(){
   this.y = this.y+(this.speedY/FPS);
   }
@@ -43,6 +44,19 @@ var enemyPath=[
   {x:224,y:320},
   {x:544,y:320}
 ]
+
+function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetHeight){
+  if(pointX >= targetX
+    &&pointX <= targetX + targetWidth
+    &&pointY >= targetY
+    &&pointY <= targetY + targetHeight
+  ){
+    return true;
+  }else{
+    return false;
+  }
+}
+
 var isBuilding = false;
 
 $("#game-canvas").on("click",function(){
