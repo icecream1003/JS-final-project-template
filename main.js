@@ -32,7 +32,16 @@ var slime = {
   speedY:-64,
   pathDes:0,
   move: function(){
-  this.y = this.y+(this.speedY/FPS);
+    this.x = this.x+(this.speedX/FPS);
+    this.y = this.y+(this.speedY/FPS);
+    if (isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speedY/FPS,this.speeedY/FPS)){
+      this.x = enemyPath[this.pathDes].x;
+      this.y = enemyPath[this.pathDes].y;
+      this.pathDes = this.pathDes + 1
+    }else if(this.pathDes == 1){
+      this.speedX = 64;
+      this.speedY = 0;
+    }
   }
 };
 
