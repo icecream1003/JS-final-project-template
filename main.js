@@ -32,27 +32,33 @@ var slime = {
   speedY:-64,
   pathDes:0,
   move: function(){
-    this.x = this.x+(this.speedX/FPS);
-    this.y = this.y+(this.speedY/FPS);
+    
     if (isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speedX/FPS,this.speeedY/FPS) == true){
       this.x = enemyPath[this.pathDes].x;
       this.y = enemyPath[this.pathDes].y;
-      this.pathDes = this.pathDes + 1
-    }else if(this.pathDes == 1){
-      this.speedX = 64;
-      this.speedY = 0;
-    }
+      
+      if(this.x == enemyPath[this.pathDes+1].x){
+        this.speedX = 0;
+        if(this.y > enemyPath[this.pathDes+1].y){
+          this.speedY = -64;
+        }else{
+          this.speedY = 64;
+        }
+      }else if(this.y == enemyPath[this.pathDes+1].y){
+        this.speedY = 0;
+        if(this.x > enemyPath[this.pathDes+1].x){
+          this.speedX = -64;
+        }else{
+          this.speedX = 64;
+        }
+      }
+      this.pathDes = this.pathDes + 1;
+    }else{
+      this.x = this.x+(this.speedX/FPS);
+      this.y = this.y+(this.speedY/FPS);
+    }      
   }
 };
-
-var enemyPath=[
-  {x:96,y:64},
-  {x:384,y:64},
-  {x:384,y:192},
-  {x:224,y:192},
-  {x:224,y:320},
-  {x:544,y:320}
-]
 
 function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetHeight){
   if(pointX >= targetX
@@ -66,6 +72,14 @@ function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetHeight){
   }
 }
 
+var enemyPath=[
+  {x:96,y:64},
+  {x:384,y:64},
+  {x:384,y:192},
+  {x:224,y:192},
+  {x:224,y:320},
+  {x:544,y:320},
+];
 var isBuilding = false;
 
 $("#game-canvas").on("click",function(){
