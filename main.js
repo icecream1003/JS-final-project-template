@@ -106,14 +106,17 @@ $("#game-canvas").on("mousemove",function(event){
 });
 
 function draw(){
+  clock++;
+  
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towerbtnImg,576,416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
-  clock++;
+  
   for(var i=0;i<slimes.length;i++){
     slimes[i].move();
     ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
   }
+  
   if(clock % 80 == 0){
     var newSlime = new Slime();
     slimes.push(newSlime);
