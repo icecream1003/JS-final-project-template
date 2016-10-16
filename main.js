@@ -24,7 +24,8 @@ var cursor = {
   x:0,
   y:0,
 };
-var slime = new Slime();
+var slimes = [];
+var clock = 0;
 
 function Slime() {
   this.x = 96;
@@ -106,10 +107,18 @@ $("#game-canvas").on("mousemove",function(event){
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(enemyImg,slime.x,slime.y);
   ctx.drawImage(towerbtnImg,576,416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
-  slime.move();
+  clock++;
+  for(var i=0;i<slimes.length;i++){
+    slimes[i].move();
+    ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
+  }
+  if(clock % 80 == 0){
+    var newSlime = new Slime();
+    enemies.push(newSlime);
+  }
+  
   if(isBuilding == true){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
