@@ -25,13 +25,13 @@ var cursor = {
   y:0,
 };
 
-var slime = {
-  x:96,
-  y:448,
-  speedX:0,
-  speedY:-64,
-  pathDes:0,
-  move: function(){
+function slime() {
+  this.x = 96;
+  this.y = 448;
+  this.speedX = 0;
+  this.speedY = -64;
+  this.pathDes = 0;
+  this.move = function(){
     
     if (isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,64/FPS,64/FPS)){
       this.x = enemyPath[this.pathDes].x;
