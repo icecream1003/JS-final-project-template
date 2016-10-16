@@ -33,29 +33,31 @@ var slime = {
   pathDes:0,
   move: function(){
     
-    if (isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speedX/FPS,this.speeedY/FPS) == true){
+    if (isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,64/FPS,64/FPS)){
       this.x = enemyPath[this.pathDes].x;
       this.y = enemyPath[this.pathDes].y;
       
       if(this.x == enemyPath[this.pathDes+1].x){
-        this.speedX = 0;
         if(this.y > enemyPath[this.pathDes+1].y){
           this.speedY = -64;
+          this.speedX = 0;
         }else{
           this.speedY = 64;
+          this.speedX = 0;
         }
       }else if(this.y == enemyPath[this.pathDes+1].y){
-        this.speedY = 0;
         if(this.x > enemyPath[this.pathDes+1].x){
+          this.speedY = 0;
           this.speedX = -64;
         }else{
+          this.speedY = 0;
           this.speedX = 64;
         }
       }
-      this.pathDes = this.pathDes + 1;
+      this.pathDes += 1;
     }else{
-      this.x = this.x+(this.speedX/FPS);
-      this.y = this.y+(this.speedY/FPS);
+      this.x += this.speedX/FPS;
+      this.y += this.speedY/FPS;
     }      
   }
 };
@@ -79,6 +81,7 @@ var enemyPath=[
   {x:224,y:192},
   {x:224,y:320},
   {x:544,y:320},
+  {x:544,y:96},
 ];
 var isBuilding = false;
 
