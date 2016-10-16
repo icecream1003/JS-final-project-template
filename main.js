@@ -116,7 +116,7 @@ function draw(){
   }
   if(clock % 80 == 0){
     var newSlime = new Slime();
-    enemies.push(newSlime);
+    slimes.push(newSlime);
   }
   
   if(isBuilding == true){
