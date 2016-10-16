@@ -24,8 +24,9 @@ var cursor = {
   x:0,
   y:0,
 };
+var slime = new Slime();
 
-function slime() {
+function Slime() {
   this.x = 96;
   this.y = 448;
   this.speedX = 0;
