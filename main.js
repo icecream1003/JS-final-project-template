@@ -26,6 +26,7 @@ var cursor = {
 };
 var slimes = [];
 var clock = 0;
+var hp = 100;
 
 function Slime() {
   this.x = 96;
@@ -111,6 +112,9 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towerbtnImg,576,416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
+  ctx.font = "24px Arial";
+  ctx.fillStyle = "while"
+  ctx.fillText("HP:"hp,100,100);
   
   for(var i=0;i<slimes.length;i++){
     slimes[i].move();
