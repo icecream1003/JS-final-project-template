@@ -113,8 +113,8 @@ function draw(){
   ctx.drawImage(towerbtnImg,576,416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
   ctx.font = "24px Arial";
-  ctx.fillStyle = "while";
-  ctx.fillText("HP:100",100,100);
+  ctx.fillStyle = "white";
+  ctx.fillText("HP:100",10,10);
   
   for(var i=0;i<slimes.length;i++){
     slimes[i].move();
