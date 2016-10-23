@@ -118,7 +118,7 @@ function draw(){
   ctx.fillText("HP:" + hp,10,50);
   
   for(var i=0;i<slimes.length;i++){
-    if(slimes[i].hp < 1){
+    if(slimes[i].hp <= 0){
       slimes.splice(i,1);
     }else{
       slimes[i].move();
