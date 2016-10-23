@@ -21,7 +21,7 @@ var FPS = 60;
 var tower = {
   x:0,
   y:0,
-  range:96,i
+  range:96,
   aimingSlimeId:null,
   searchSlime:function(){
     for(var i=0;i<slimes.length;i++){
