@@ -122,8 +122,8 @@ function draw(){
       slimes.splice(i,1);
     }else{
       slimes[i].move();
+      ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
     }
-    ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
   }
   
   if(clock % 80 == 0){
