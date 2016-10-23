@@ -34,6 +34,7 @@ function Slime() {
   this.speedX = 0;
   this.speedY = -64;
   this.pathDes = 0;
+  this.hp = 100;
   this.move = function(){
     
     if (isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,64/FPS,64/FPS)){
@@ -117,7 +118,11 @@ function draw(){
   ctx.fillText("HP:" + hp,10,50);
   
   for(var i=0;i<slimes.length;i++){
-    slimes[i].move();
+    if(slimes[i].hp < 1){
+      slimes.splice(i,1);
+    }else{
+      slimes[i].move();
+    }
     ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
   }
   
