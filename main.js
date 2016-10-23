@@ -18,6 +18,19 @@ var FPS = 60;
 var tower = {
   x:0,
   y:0,
+  range:96,
+  aimingSlimeId:null,
+  searchSlime:function(){
+    for(var i=0;i<slimes.length;i++){
+      var distance = Math.sqrt(Math.pow(this.x-slimes[i].x,2)+Math.pow(this.y-slimes[i].y,2)
+      );
+      if(distance<=this.range){
+        this.aimingSlimeId = i;
+        return;
+      }
+    }
+    this.aimingSlimeId = null;
+  }
 };
 
 var cursor = {
