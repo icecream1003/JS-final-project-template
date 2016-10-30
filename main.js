@@ -133,6 +133,8 @@ $("#game-canvas").on("click",function(){
       isBuilding = false;
     }
   }else if(isBuilding == true){
+    var newTower = new Tower();
+    towers.push(newTower);
     towers.x = cursor.x;
     towers.y = cursor.y;
   }
