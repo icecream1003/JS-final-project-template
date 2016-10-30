@@ -28,7 +28,7 @@ var tower = {
     ctx.moveTo(this.x,this.y);
     ctx.lineTo(slimes[this.aimingSlimeId].x,slimes[this.aimingSlimeId].y);
     ctx.strokeStyle = "red";
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 10;
     ctx.stroke();
     slimes[this.aimingSlimeId].hp -= 5;
   },
