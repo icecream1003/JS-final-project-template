@@ -134,9 +134,9 @@ $("#game-canvas").on("click",function(){
     }
   }else if(isBuilding == true){
     var newTower = new Tower();
+    Tower.x = cursor.x;
+    Tower.y = cursor.y;
     towers.push(newTower);
-    towers.x = cursor.x;
-    towers.y = cursor.y;
   }
 })
 
@@ -150,7 +150,9 @@ function draw(){
   
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towerbtnImg,576,416,64,64);
-  ctx.drawImage(towerImg,towers.x,towers.y);
+  for(var i=0;i<towers.lenght;i++){
+    ctx.drawImage(towerImg,towers[i].x,towers[i].y);
+  }  
   ctx.font = "24px Arial";
   ctx.fillStyle = "white";
   ctx.fillText("HP:" + hp,10,25);
@@ -167,12 +169,12 @@ function draw(){
       ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
     }
   }
-  
-  for(var t=0;t<towers.lenght;t++){
-  towers[t].searchSlime();
-    if(towers[t].aimingSlimeId!=null){
-      var id = towers[t].aimingSlimeId;
-      ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
+  for(var i=0;i<towers.lenght;i++){
+    towers[i].searchSlime();
+      if(towers[i].aimingSlimeId!=null){
+        var id = towers[i].aimingSlimeId;
+        ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
+      }
     }
   }
   if(clock % 80 == 0){
