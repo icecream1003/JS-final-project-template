@@ -22,15 +22,15 @@ var tower = {
   x:0,
   y:0,
   range:96,
-  damage:5,
-  shoot:function(){
+  damage:10,
+  shoot:function(id){
     ctx.beginPath();
     ctx.moveTo(this.x,this.y);
-    ctx.lineTo(slimes[this.aimingSlimeId].x,slimes[this.aimingSlimeId].y);
+    ctx.lineTo(slimes[id].x,slimes[id].y);
     ctx.strokeStyle = "red";
     ctx.lineWidth = 10;
     ctx.stroke();
-    slimes[this.aimingSlimeId].hp -= 5;
+    slimes[id].hp -= 5;
   },
   fireRate:1,
   readyToShootTime:1,
@@ -43,7 +43,7 @@ var tower = {
       if(distance<=this.range){
         this.aimingSlimeId = i;
         if(this.readyToShootTime <= 0){
-          this.shoot;
+          this.shoot(this.aimingSlimeId);
           this.readyToShootTime = this.fireRate;
         }
       return;
