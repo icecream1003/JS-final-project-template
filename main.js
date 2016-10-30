@@ -42,7 +42,7 @@ var tower = {
       );
       if(distance<=this.range){
         this.aimingSlimeId = i;
-        if(readyToShootTime <= 0){
+        if(this.readyToShootTime <= 0){
           this.shoot;
           this.readyToShootTime = this.fireRate;
         }
