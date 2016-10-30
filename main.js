@@ -36,7 +36,7 @@ var tower = {
   readyToShootTime:1,
   aimingSlimeId:null,
   searchSlime:function(){
-    this.readyToShootTime -= 1/FPS;
+    this.readyToShootTime -= 2/FPS;
     for(var i=0;i<slimes.length;i++){
       var distance = Math.sqrt(Math.pow(this.x-slimes[i].x,2)+Math.pow(this.y-slimes[i].y,2)
       );
