@@ -148,7 +148,7 @@ function draw(){
   
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towerbtnImg,576,416,64,64);
-  ctx.drawImage(towerImg,tower.x,tower.y);
+  ctx.drawImage(towerImg,towers.x,towers.y);
   ctx.font = "24px Arial";
   ctx.fillStyle = "white";
   ctx.fillText("HP:" + hp,10,25);
