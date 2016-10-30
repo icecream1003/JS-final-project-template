@@ -30,7 +30,7 @@ var tower = {
     ctx.strokeStyle = "red";
     ctx.lineWidth = 10;
     ctx.stroke();
-    slimes[id].hp -= 5;
+    slimes[id].hp -= this.damage;
   },
   fireRate:1,
   readyToShootTime:1,
