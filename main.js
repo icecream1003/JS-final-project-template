@@ -31,8 +31,6 @@ var tower = {
     ctx.lineWidth = 3;
     ctx.stroke();
     slimes[id].hp -= this.damage;
-    score += 5;
-    money += 25;
   },
   fireRate:1,
   readyToShootTime:1,
@@ -158,6 +156,8 @@ function draw(){
   
   for(var i=0;i<slimes.length;i++){
     if(slimes[i].hp <= 0){
+      score += 5;
+      money += 25;
       slimes.splice(i,1);
     }else{
       slimes[i].move();
