@@ -166,12 +166,13 @@ function draw(){
     }
   }
   
-  towers.searchSlime();
-  if(towers.aimingSlimeId!=null){
-    var id = towers.aimingSlimeId;
-    ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
+  for(var t=0;t<towers.lenght;t++){
+  towers[t].searchSlime();
+    if(towers[t].aimingSlimeId!=null){
+      var id = towers[t].aimingSlimeId;
+      ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
+    }
   }
-  
   if(clock % 80 == 0){
     var newSlime = new Slime();
     slimes.push(newSlime);
