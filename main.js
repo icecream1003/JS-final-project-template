@@ -22,7 +22,7 @@ var tower = {
   x:0,
   y:0,
   range:96,
-  damage:10,
+  damage:50,
   shoot:function(id){
     ctx.beginPath();
     ctx.moveTo(this.x,this.y);
