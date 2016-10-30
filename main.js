@@ -60,6 +60,8 @@ var cursor = {
 var slimes = [];
 var clock = 0;
 var hp = 100;
+var score = 0;
+var money = 0;
 
 function Slime() {
   this.x = 96;
@@ -148,12 +150,14 @@ function draw(){
   ctx.drawImage(towerImg,tower.x,tower.y);
   ctx.font = "24px Arial";
   ctx.fillStyle = "white";
-  ctx.fillText("HP:" + hp,10,50);
+  ctx.fillText("HP:" + hp,10,30);
+  ctx.fillText("Score:" + score,10,50);
+  ctx.fillText("Money:" + money,10,70);
   
   for(var i=0;i<slimes.length;i++){
     if(slimes[i].hp <= 0){
       slimes.splice(i,1);
-    }else{
+    }else{,
       slimes[i].move();
       ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
     }
