@@ -171,10 +171,9 @@ function draw(){
   }
   for(var i=0;i<towers.lenght;i++){
     towers[i].searchSlime();
-      if(towers[i].aimingSlimeId!=null){
-        var id = towers[i].aimingSlimeId;
-        ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
-      }
+    if(towers[i].aimingSlimeId!=null){
+      var id = towers[i].aimingSlimeId;
+      ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
     }
   }
   if(clock % 80 == 0){
