@@ -18,12 +18,13 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 
 var FPS = 60;
-var tower = {
-  x:0,
-  y:0,
-  range:96,
-  damage:50,
-  shoot:function(id){
+var towers = [];
+function Tower(){
+  this.x = 0;
+  this.y = 0;
+  this.range = 96;
+  this.damage = 20;
+  this.shoot = function(id){
     ctx.beginPath();
     ctx.moveTo(this.x,this.y);
     ctx.lineTo(slimes[id].x,slimes[id].y);
@@ -31,11 +32,11 @@ var tower = {
     ctx.lineWidth = 3;
     ctx.stroke();
     slimes[id].hp -= this.damage;
-  },
-  fireRate:1,
-  readyToShootTime:1,
-  aimingSlimeId:null,
-  searchSlime:function(){
+  };
+  this.fireRate = 1;
+  this.readyToShootTime = 1;
+  this.aimingSlimeId = null;
+  this.searchSlime = function(){
     this.readyToShootTime -= 2/FPS;
     for(var i=0;i<slimes.length;i++){
       var distance = Math.sqrt(Math.pow(this.x-slimes[i].x,2)+Math.pow(this.y-slimes[i].y,2)
@@ -132,8 +133,8 @@ $("#game-canvas").on("click",function(){
       isBuilding = false;
     }
   }else if(isBuilding == true){
-    tower.x = cursor.x;
-    tower.y = cursor.y;
+    towers.x = cursor.x;
+    towers.y = cursor.y;
   }
 })
 
@@ -165,9 +166,9 @@ function draw(){
     }
   }
   
-  tower.searchSlime();
-  if(tower.aimingSlimeId!=null){
-    var id = tower.aimingSlimeId;
+  towers.searchSlime();
+  if(towers.aimingSlimeId!=null){
+    var id = towers.aimingSlimeId;
     ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
   }
   
