@@ -22,14 +22,31 @@ var tower = {
   x:0,
   y:0,
   range:96,
+  damage:5,
+  shoot:function(){
+    ctx.beginPath();
+    ctx.moveTo(this.x,this.y);
+    ctx.lineTo(slimes[this.aimingSlimeId].x,slimes[this.aimingSlimeId].y);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    slimes[this.aimingSlimeId].hp -= 5;
+  },
+  fireRate:1,
+  readyToShootTime:1,
   aimingSlimeId:null,
   searchSlime:function(){
+    this.readyToShootTime -= 1/FPS;
     for(var i=0;i<slimes.length;i++){
       var distance = Math.sqrt(Math.pow(this.x-slimes[i].x,2)+Math.pow(this.y-slimes[i].y,2)
       );
       if(distance<=this.range){
         this.aimingSlimeId = i;
-        return;
+        if(readyToShootTime <= 0){
+          this.shoot;
+          this.readyToShootTime = this.fireRate;
+        }
+      return;
       }
     }
     this.aimingSlimeId = null;
