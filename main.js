@@ -31,6 +31,8 @@ var tower = {
     ctx.lineWidth = 3;
     ctx.stroke();
     slimes[id].hp -= this.damage;
+    score += 5;
+    money += 25;
   },
   fireRate:1,
   readyToShootTime:1,
