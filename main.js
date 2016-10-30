@@ -157,7 +157,7 @@ function draw(){
   for(var i=0;i<slimes.length;i++){
     if(slimes[i].hp <= 0){
       slimes.splice(i,1);
-    }else{,
+    }else{
       slimes[i].move();
       ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
     }
