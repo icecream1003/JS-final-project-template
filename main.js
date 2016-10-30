@@ -150,9 +150,9 @@ function draw(){
   ctx.drawImage(towerImg,tower.x,tower.y);
   ctx.font = "24px Arial";
   ctx.fillStyle = "white";
-  ctx.fillText("HP:" + hp,10,30);
+  ctx.fillText("HP:" + hp,10,25);
   ctx.fillText("Score:" + score,10,50);
-  ctx.fillText("Money:" + money,10,70);
+  ctx.fillText("Money:" + money,10,75);
   
   for(var i=0;i<slimes.length;i++){
     if(slimes[i].hp <= 0){
