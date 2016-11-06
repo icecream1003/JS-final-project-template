@@ -62,7 +62,7 @@ var slimes = [];
 var clock = 0;
 var hp = 100;
 var score = 0;
-var money = 0;
+var money = 100;
 
 function Slime() {
   this.x = 96;
