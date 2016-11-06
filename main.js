@@ -165,8 +165,10 @@ function draw(){
   
   for(var i=0;i<slimes.length;i++){
     if(slimes[i].hp <= 0){
-      score += 5;
-      money += 25;
+      if(slimes[i].pathDes != enemyPath.length - 1){
+        score += 5;
+        money += 25;
+      }
       slimes.splice(i,1);
     }else{
       slimes[i].move();
@@ -175,7 +177,7 @@ function draw(){
   }
   for(var i=0;i<towers.lenght;i++){
     towers[i].searchSlime();
-    if(towers[i].aimingSlimeId!=null){
+    if(towers[i].aimingSlimeId != null){
       var id = towers[i].aimingSlimeId;
       ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
     }
