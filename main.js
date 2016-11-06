@@ -206,9 +206,9 @@ function draw(){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
 }
-var setIntervalID = setInterval(function(){
+var intervalID = setInterval(function(){
   if(hp <= 0){
-    clearInterval(IntervalID);
+    clearInterval(intervalID);
   }
 },3000)
 
