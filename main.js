@@ -164,6 +164,9 @@ var morespeed = 0
 function draw(){
   clock++;
   
+  if(hp <= 0){
+    clearInterval(intervalID);
+  
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towerbtnImg,576,416,64,64);
   
@@ -210,9 +213,6 @@ var intervalID = setInterval(function(){
   
 },3000)
 
-if(hp <= 0){
-    clearInterval(intervalID);
-}else{
-    setInterval(draw,1000/FPS);
-}
+setInterval(draw,1000/FPS);
+
 
