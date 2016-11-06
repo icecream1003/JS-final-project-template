@@ -154,9 +154,11 @@ function draw(){
   
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towerbtnImg,576,416,64,64);
-  for(var i=0;i<towers.lenght;i++){
+  
+  for(var i=0;i<towers.length;i++){
     ctx.drawImage(towerImg,towers[i].x,towers[i].y);
-  }  
+  }
+  
   ctx.font = "24px Arial";
   ctx.fillStyle = "white";
   ctx.fillText("HP:" + hp,10,25);
