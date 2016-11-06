@@ -188,6 +188,7 @@ function draw(){
   }
   if(clock % 80 == 0){
     var newSlime = new Slime();
+    newSlime.hp += 10000;
     slimes.push(newSlime);
   }
   
