@@ -213,6 +213,6 @@ var intervalID = setInterval(function(){
   
 },3000)
 
-setInterval(draw,1000/FPS);
+setInterval(draw,1000/FPS)
 
 
