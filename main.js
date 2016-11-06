@@ -38,9 +38,10 @@ function Tower(){
   this.aimingSlimeId = null;
   this.searchSlime = function(){
     this.readyToShootTime -= 2/FPS;
+    this.aimingSlimeId = null;
+    
     for(var i=0;i<slimes.length;i++){
-      var distance = Math.sqrt(Math.pow(this.x-slimes[i].x,2)+Math.pow(this.y-slimes[i].y,2)
-      );
+      var distance = Math.sqrt(Math.pow(this.x-slimes[i].x,2)+Math.pow(this.y-slimes[i].y,2));
       if(distance<=this.range){
         this.aimingSlimeId = i;
         if(this.readyToShootTime <= 0){
@@ -50,7 +51,6 @@ function Tower(){
       return;
       }
     }
-    this.aimingSlimeId = null;
   }
 };
 
