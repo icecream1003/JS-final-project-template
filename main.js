@@ -26,8 +26,8 @@ function Tower(){
   this.damage = 20;
   this.shoot = function(id){
     ctx.beginPath();
-    ctx.moveTo(this.x,this.y);
-    ctx.lineTo(slimes[id].x,slimes[id].y);
+    ctx.moveTo(this.x + 16,this.y + 16);
+    ctx.lineTo(slimes[id].x + 16,slimes[id].y + 16);
     ctx.strokeStyle = "red";
     ctx.lineWidth = 3;
     ctx.stroke();
