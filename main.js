@@ -157,6 +157,8 @@ $("#game-canvas").on("mousemove",function(event){
   cursor.y = event.offsetY - (event.offsetY % 32);
 });
 
+var slimehp = 100;
+
 function draw(){
   clock++;
   
@@ -190,7 +192,7 @@ function draw(){
       ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
     }
   }
-  var slimehp = 100;
+  
   if(clock % 80 == 0){
     var newSlime = new Slime();
     newSlime.hp = slimehp;
