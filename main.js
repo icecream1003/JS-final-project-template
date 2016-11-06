@@ -74,6 +74,11 @@ function Slime() {
   this.move = function(){
     
     if (isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,64/FPS,64/FPS)){
+      if(this.pathDes == enemyPath.length - 1){
+        this.hp = 0;
+        hp -= 10;
+        return;
+      }
       this.x = enemyPath[this.pathDes].x;
       this.y = enemyPath[this.pathDes].y;
       
@@ -188,7 +193,6 @@ function draw(){
   }
   if(clock % 80 == 0){
     var newSlime = new Slime();
-    newSlime.hp += 10000;
     slimes.push(newSlime);
   }
   
