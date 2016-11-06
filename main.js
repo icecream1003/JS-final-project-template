@@ -177,7 +177,7 @@ function draw(){
       ctx.drawImage(enemyImg,slimes[i].x,slimes[i].y);
     }
   }
-  for(var i=0;i<towers.lenght;i++){
+  for(var i=0;i<towers.length;i++){
     towers[i].searchSlime();
     if(towers[i].aimingSlimeId != null){
       var id = towers[i].aimingSlimeId;
