@@ -192,6 +192,9 @@ function draw(){
   }
   if(clock % 80 == 0){
     var newSlime = new Slime();
+    for(var i=0;i<slimes.length;i=i+10){
+      newSlime.hp = newSlime.hp + i
+    }
     slimes.push(newSlime);
   }
   
