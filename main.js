@@ -205,13 +205,14 @@ function draw(){
   if(isBuilding == true){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
+var intervalID = setInterval(function(){
   if(hp <= 0){
     clearInterval(intervalID);
   }
-}
-var intervalID = setInterval(function(){
-  
 },3000);
+  
+}
+
 
 setInterval(draw,1000/FPS);
 
