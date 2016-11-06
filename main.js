@@ -196,7 +196,7 @@ function draw(){
   if(clock % 80 == 0){
     var newSlime = new Slime();
     newSlime.hp = slimehp;
-    slimehp = slimehp + 100;
+    slimehp = slimehp + 20;
     slimes.push(newSlime);
   }
   
