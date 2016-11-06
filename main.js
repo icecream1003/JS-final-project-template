@@ -209,9 +209,8 @@ function draw(){
 var intervalID = setInterval(function(){
   if(hp <= 0){
     clearInterval(intervalID);
+  }else{
+    setInterval(draw,1000/FPS);
   }
 },3000)
 
-
-
-setInterval(draw,1000/FPS);
