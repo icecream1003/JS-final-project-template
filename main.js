@@ -134,8 +134,8 @@ $("#game-canvas").on("click",function(){
     }
   }else if(isBuilding == true){
     var newTower = new Tower();
-    newtower.x = cursor.x;
-    newtower.y = cursor.y;
+    newTower.x = cursor.x;
+    newTower.y = cursor.y;
     towers.push(newTower);
   }
 })
