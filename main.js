@@ -190,11 +190,11 @@ function draw(){
       ctx.drawImage(crosshairImg,slimes[id].x,slimes[id].y);
     }
   }
+  var slimehp = 100;
   if(clock % 80 == 0){
     var newSlime = new Slime();
-    for(var i=0;i<slimes.length;i=i+10){
-      newSlime.hp = newSlime.hp + i
-    }
+    newSlime.hp = slimehp;
+    slimehp = slimehp + 10;
     slimes.push(newSlime);
   }
   
