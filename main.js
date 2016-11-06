@@ -67,6 +67,7 @@ var money = 100;
 function Slime() {
   this.x = 96;
   this.y = 448;
+  this.morespeed = 0
   this.speedX = 0;
   this.speedY = -64;
   this.pathDes = 0;
@@ -158,6 +159,7 @@ $("#game-canvas").on("mousemove",function(event){
 });
 
 var slimehp = 100;
+var morespeed = 0
 
 function draw(){
   clock++;
@@ -204,5 +206,10 @@ function draw(){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
 }
+var setIntervalID = setInterval(function(){
+  setInterval(draw,1000/FPS);
+},3000)
 
-setInterval(draw,1000/FPS);
+if(hp <= 0){
+  clearInterval(IntervalID);
+}
