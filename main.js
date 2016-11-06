@@ -77,6 +77,7 @@ function Slime() {
       if(this.pathDes == enemyPath.length - 1){
         this.hp = 0;
         hp -= 10;
+        money -= 25;
         return;
       }
       this.x = enemyPath[this.pathDes].x;
@@ -174,10 +175,8 @@ function draw(){
   
   for(var i=0;i<slimes.length;i++){
     if(slimes[i].hp <= 0){
-      if(slimes[i].pathDes != enemyPath.length - 1){
-        score += 5;
-        money += 25;
-      }
+      score += 5;
+      money += 25;
       slimes.splice(i,1);
     }else{
       slimes[i].move();
